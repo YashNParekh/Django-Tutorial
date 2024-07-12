@@ -2,8 +2,24 @@ import { useState, useEffect } from "react";
 import api from "../api";
 import Note from "../components/Note";
 import "../styles/Home.css";
+import { useNavigate } from 'react-router-dom';
+
 
 function Home() {
+
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Clear the user's session data from local storage
+    localStorage.clear();
+
+    // Navigate to the login page
+    navigate('/login');
+  };
+  
+  
+  
   const [notes, setNotes] = useState([]);
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
@@ -50,8 +66,8 @@ function Home() {
   };
 
   return (
-    <div className="mainContainer" style={{ margin: "0 auto" }}>
-      <h1> Notes </h1>
+    <div className="mainContainer" style={{overflow:"hidden", margin: "0 auto" }}>
+      <h1 className="title"> Notes </h1>
 
       {notes.map((note) => (
         <Note note={note} onDelete={deleteNote} key={note.id} />
@@ -94,6 +110,13 @@ function Home() {
           <input type="submit" />
         </div>
       </form>
+      <button  style={{background:'white', color:'red' ,margin:'40px 0px 0px 0px'}} onClick={
+  handleLogout
+        
+       } >LogOut</button>
+
+
+      
     </div>
   );
 }
