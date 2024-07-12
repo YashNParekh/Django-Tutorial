@@ -66,7 +66,7 @@ function Home() {
   };
 
   return (
-    <div className="mainContainer" style={{overflow:"hidden", margin: "0 auto" }}>
+    <div className="mainContainer" style={{ margin: "0 auto" }}>
       <h1 className="title"> Notes </h1>
 
       {notes.map((note) => (
