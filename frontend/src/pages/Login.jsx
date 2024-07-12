@@ -16,7 +16,7 @@ function Login() {
       <button style={{background:'red',color:'white',margin:'0px 40px '}}   
           onClick ={(e)=>{
             
-            if (method=='login') setMethode('regiter')
+            if (method=='login') setMethode('register')
             else setMethode('login')
             console.log(method)
 
