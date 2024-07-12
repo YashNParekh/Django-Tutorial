@@ -1,7 +1,9 @@
 import Form from "../components/Form";
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useState } from "react";
 
+import { useNavigate } from 'react-router-dom';
+ 
 
 function Login() {
 
@@ -10,26 +12,20 @@ function Login() {
   const [method,setMethode] = useState('login')
   const [route,setroute] = useState('/api/token/')
   
-  const methode_tochange  = () =>
-   { return (
-  <span style={{margin:'0px 10px 0px 40px'}}>  Don't have an account?
-      <button style={{background:'red',color:'white',margin:'0px 40px '}}   
-          onClick ={(e)=>{
-            
-            if (method=='login') setMethode('register')
-            else setMethode('login')
-            console.log(method)
+  const navigate = useNavigate();
 
-            setroute(routes[method]) 
-            }
-          }
-          >Sign up</button>
-      </span>)}
   return (
     <div>
   
-      <Form route={route} method={method} ChnageMethode={methode_tochange} />;
-
+      <Form route={route} method={method}  />;
+      <span style={{color:'white',display:'block' , textAlign:'center'}}>  Don't have an account?
+      <button style={{background:'red',color:'white',margin:'0px 40px '}}   
+          onClick ={(e)=>{
+            navigate('/register');
+            }
+          }
+          >Sign up</button>
+      </span>)
     </div>
 )
 

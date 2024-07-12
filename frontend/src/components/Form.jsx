@@ -6,7 +6,7 @@ import '../styles/Form.css'
 import Loading  from '../components/LoadingIndicator';
 import LoadingIndicator from "../components/LoadingIndicator";
 
-function Form({route,method,ChnageMethode}){
+function Form({route,method}){
 
 
     
@@ -39,7 +39,7 @@ function Form({route,method,ChnageMethode}){
     };
 
     return (
-    <div style={{padding:'0 auto', height:'100vh' ,width:'100vw',textAlign:'center'}}>
+    <div style={{padding:'0 auto' ,width:'100vw',textAlign:'center'}}>
     <form onSubmit={handleSubmit} className="form-container">
 
             <h1>{name}</h1>
@@ -57,7 +57,7 @@ function Form({route,method,ChnageMethode}){
             onChange={(e)=> {setUpassword(e.target.value)}}
             placeholder="Password"   
             />  
-        <ChnageMethode />
+       
             {
                 loading && <LoadingIndicator />
             }
