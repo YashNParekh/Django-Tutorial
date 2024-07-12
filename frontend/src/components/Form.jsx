@@ -6,7 +6,10 @@ import '../styles/Form.css'
 import Loading  from '../components/LoadingIndicator';
 import LoadingIndicator from "../components/LoadingIndicator";
 
-function Form({route,method}){
+function Form({route,method,ChnageMethode}){
+
+
+    
 
     const [username,setUsername] = useState('')
     const [password,setUpassword] = useState('')
@@ -53,7 +56,8 @@ function Form({route,method}){
             value={password}
             onChange={(e)=> {setUpassword(e.target.value)}}
             placeholder="Password"   
-            />
+            />  
+        <ChnageMethode />
             {
                 loading && <LoadingIndicator />
             }

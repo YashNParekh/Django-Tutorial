@@ -1,3 +1,9 @@
+*{
+  color: black;
+  
+}
+
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -29,6 +35,7 @@ input.form-input.required:valid {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  color: white;
 }
 
 .form-button {
